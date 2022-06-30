@@ -10,29 +10,12 @@ import {
   Container,
   Header,
   HeaderContent,
-  TotalCars
+  TotalCars,
+  CarList
 } from './styles';
 
 export function Home(){
-  const CarDataOne = {
-    brand: 'Audi',
-    name: 'RS 5 Coupé',
-    rent: {
-      period: 'Ao dia',
-      price: 120,
-    },
-    thunbnail: 'https://w7.pngwing.com/pngs/787/25/png-transparent-lightning-mcqueen-lightning-mcqueen-cars-wikia-toy-pixar-cars-3-game-car-transport-thumbnail.png'
-  }
-  const CarDataTwo = {
-    brand: 'Audi',
-    name: 'RS 5 Coupé',
-    rent: {
-      period: 'Ao dia',
-      price: 120,
-    },
-    thunbnail: 'https://w7.pngwing.com/pngs/787/25/png-transparent-lightning-mcqueen-lightning-mcqueen-cars-wikia-toy-pixar-cars-3-game-car-transport-thumbnail.png'
-  }
-  const CarDataThree = {
+  const carData = {
     brand: 'Audi',
     name: 'RS 5 Coupé',
     rent: {
@@ -59,10 +42,10 @@ export function Home(){
           </TotalCars>
         </HeaderContent>
       </Header>
-
-      <Car data ={CarDataOne}/>
-      <Car data ={CarDataTwo}/>
-      <Car data ={CarDataThree}/>
+      <CarList
+        data={[1,2,3,4,5,6]}
+        renderItem={({ item }) => <Car data={carData}/>}
+      />
       
     </Container>
   );
