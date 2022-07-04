@@ -1,5 +1,5 @@
+import 'react-native-gesture-handler';
 //import { StatusBar } from 'expo-status-bar';
-//import 'react-native-gesture-handler';
 import React, { useCallback, useEffect, useState} from 'react';
 import { View } from 'react-native';
 
@@ -7,9 +7,8 @@ import { View } from 'react-native';
 //import * as SplashScreen from 'expo-splash-screen';
 //import * as Font from 'expo-font';
 import { ThemeProvider } from 'styled-components';
-import { CarDetails } from './src/screens/CarDetails';
-import { Home } from './src/screens/Home';
-import { Scheduling } from './src/screens/Scheduling';
+
+import { Routes } from './src/routes';
 import theme from './src/screens/styles/theme';
 
 import {
@@ -66,7 +65,7 @@ export default function App() {
       style={{flex: 1}}
     >
       <ThemeProvider theme={theme}>
-        <Scheduling />
+        <Routes />
       </ThemeProvider>
     </View>
   )
