@@ -8,6 +8,9 @@ import { View } from 'react-native';
 //import * as Font from 'expo-font';
 import { ThemeProvider } from 'styled-components';
 import { CarDetails } from './src/screens/CarDetails';
+import { Home } from './src/screens/Home';
+import { Scheduling } from './src/screens/Scheduling';
+import theme from './src/screens/styles/theme';
 
 import {
   useFonts,
@@ -23,8 +26,6 @@ import {
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 
-import { Home } from './src/screens/Home';
-import theme from './src/screens/styles/theme';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -65,7 +66,7 @@ export default function App() {
       style={{flex: 1}}
     >
       <ThemeProvider theme={theme}>
-        <CarDetails />
+        <Scheduling />
       </ThemeProvider>
     </View>
   )
