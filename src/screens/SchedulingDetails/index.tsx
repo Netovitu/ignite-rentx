@@ -92,7 +92,7 @@ export function SchedulingDetails(){
       id: car.id,
       unavailable_dates
     })
-    .then(() => navigation.navigate('SchedulingComplete'))
+    .then(() => navigation.navigate('SchedulingComplete' as never))
     .catch(() => {
       setLoading(false);
       Alert.alert('Não foi possível confirmar o agendamento.')
