@@ -38,19 +38,15 @@ export function Scheduling(){
   const [markedDates, setMarkedDates] = useState<MarkedDateProps>({} as MarkedDateProps);
   const [rentalPeriod, setRentalPeriod] = useState<RentalPeriod>({} as RentalPeriod);
   const route = useRoute();
-  const { car } = route.params as Params;
   const navigation = useNavigation();
   const theme = useTheme();
+  const { car } = route.params as Params;
 
   function handleConfirmRental() {
-    if(!rentalPeriod.startFormatted || !rentalPeriod.endFormatted){
-      Alert.alert("Selecione o intervalo para alugar.");
-    } else{
-    navigation.navigate('SchedulingDetails', {
-        car,
-        dates: Object.keys(markedDates)
-      });
-    }
+  navigation.navigate('SchedulingDetails', {
+      car,
+      dates: Object.keys(markedDates)
+    });
   }
 
   function handleBack() {
@@ -123,7 +119,7 @@ export function Scheduling(){
       </Content>
 
       <Footer>
-        <Button title='Confirmar' onPress={handleConfirmRental}/>
+        <Button title='Confirmar' onPress={handleConfirmRental} enabled={!!rentalPeriod.startFormatted}/>
       </Footer>
     </Container>
   );
