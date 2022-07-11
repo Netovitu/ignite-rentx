@@ -43,10 +43,10 @@ export function Scheduling(){
   const { car } = route.params as Params;
 
   function handleConfirmRental() {
-  navigation.navigate('SchedulingDetails', {
+  navigation.navigate('SchedulingDetails' as never, {
       car,
       dates: Object.keys(markedDates)
-    });
+    } as never);
   }
 
   function handleBack() {

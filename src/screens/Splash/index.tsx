@@ -48,7 +48,7 @@ export function Splash(){
   });
 
   function startApp() {
-    navigation.navigate('Home');
+    navigation.navigate('Home' as any);
   }
 
   useEffect(() => {
@@ -64,11 +64,11 @@ export function Splash(){
 
   return (
     <Container>
-      <Animated.View style={[brandStyle, { position: 'absolute'}]}>
+      <Animated.View style={[brandStyle, { position: 'absolute' }]}>
         <BrandSvg width={80} height={80}/>
       </Animated.View>
 
-      <Animated.View style={[logoStyle, {position: 'absolute'}]}>
+      <Animated.View style={[logoStyle, { position: 'absolute' }]}>
         <LogoSvg width={180} height={20}/>
       </Animated.View>
     </Container>

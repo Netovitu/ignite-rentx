@@ -28,11 +28,11 @@ export function Home(){
   const theme = useTheme();
   
   function handleCarDetails(car: CarDTO){
-    navigation.navigate('CarDetails', { car });
+    navigation.navigate('CarDetails' as never , { car } as never);
   }
 
   function handleOpenMyCars(){
-    navigation.navigate('MyCars');
+    navigation.navigate('MyCars' as never) ;
   }
 
   useEffect(() => {
@@ -67,6 +67,7 @@ export function Home(){
           </TotalCars>
         </HeaderContent>
       </Header>
+
       { loading ? <Load /> :
         <CarList
           data={cars}
@@ -76,6 +77,7 @@ export function Home(){
           }
         />
       }
+      
       <MyCarsButton onPress={handleOpenMyCars}>
         <Ionicons 
           name="ios-car-sport"
