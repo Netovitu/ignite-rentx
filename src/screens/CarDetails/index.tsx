@@ -47,7 +47,6 @@ export function CarDetails(){
   const scrollY = useSharedValue(0);
   const scrollHandler = useAnimatedScrollHandler(event => {
     scrollY.value = event.contentOffset.y;
-    console.log(event.contentOffset.y);
   });
 
   const headerStyleAnimation = useAnimatedStyle(() => {
@@ -111,7 +110,7 @@ export function CarDetails(){
         }}
         showsVerticalScrollIndicator={false}
         onScroll={scrollHandler}
-        scrollEventThrottle={16}  
+        scrollEventThrottle={16}
       >
         <Details>
           <Description>
@@ -128,10 +127,10 @@ export function CarDetails(){
             car.accessories.map(accessory => (
               <Accessory
                 key={accessory.type}
-                name={accessory.name} 
+                name={accessory.name}
                 icon={getAccessoryIcon(accessory.type)}
               />
-            )) 
+            ))
           }
         </Accessories>
         <About>
